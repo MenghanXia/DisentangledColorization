@@ -7,3 +7,8 @@ Colorization is multimodal by nature and challenges existing frameworks to achie
 
 
 ## *Code coming soon!*
+
+<!--
+TODO:
+The most admirable feature our colorization system is the automatically predicted color anchors, which supports automatic colorization, diverse colorization, and controllable colorization over a single model. So, to make this project impactful, we will provide a user-friendly interface demo (via HuggingFace) that allows users to select anchor amount and then modify the anchor color or even delete anchors manually (namely assign a special color status). This may offer users a more flexible colorizaton system.
+-->
