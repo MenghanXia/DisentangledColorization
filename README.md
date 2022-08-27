@@ -1,6 +1,6 @@
 ## DISCO: Disentangled Image Colorization via Global Anchors
 
-Paper(<font color=red>coming soon</font>) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(<font color=red>coming soon</font>)
+Paper(<span style="color:red;">coming soon</span>) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(<span style="color:red;">coming soon</span>)
 
 <div align="center">
 	<img src="asserts/teaser.png" width="95%">
@@ -8,10 +8,10 @@ Paper(<font color=red>coming soon</font>) | [Project Page](https://menghanxia.gi
 
 <br>
 
-**This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html). :star: 
+:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ### Network architecture
-Our automatic colorization model consists of two conceptual components: (i) **anchor color representation** that predicts global color anchors (i.e. location and probabilistic colors) as the color distribution representation of the whole image; (ii) **anchor-conditioned color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
+Conceptual, our colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
 
 <div align="center">
 	<img src="asserts/network.png" width="95%">
@@ -75,11 +75,12 @@ NOTE that *w* is in [0, 1]. Generally, smaller *w* tends to produce a higher-qua
 The results will be saved in the `results` folder.
 
 ### Citation
-If our work is useful for your research, please consider citing:
-
-@article{zhou2022codeformer,
-    author = {Zhou, Shangchen and Chan, Kelvin C.K. and Li, Chongyi and Loy, Chen Change},
-	title = {Towards Robust Blind Face Restoration with Codebook Lookup TransFormer},
-	journal = {arXiv preprint arXiv:2206.11253},
+If any part of our paper and code is helpful to your work, please generously cite with:
+```
+@article{xia-2021-inverthalf,
+	author   = {Menghan Xia and Wenbo Hu and Tien-Tsin Wong and Jue Wang},
+	title    = {Disentangled Image Colorization via Global Anchors},
+	journal = {ACM Transactions on Graphics (TOG)},
 	year = {2022}
 }
+```
