@@ -9,6 +9,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 </div>
 
 <br>
+
 :blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ## Dependencies and Installation
