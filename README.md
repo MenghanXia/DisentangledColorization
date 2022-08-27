@@ -1,12 +1,9 @@
-<p align="center">
-  <img src="assets/CodeFormer_logo.png" height=110>
-</p>
 ## Disentangled Image Colorization via Global Anchors
+
+#### *This is the official implementation of our SIGA paper: Disentangled Image Colorization via Global Anchors.*
 <!-- ------------------------------------------------------------------------------ -->
 
 Paper(<font color=red>coming soon</font>) | [Project Page](menghanxia.github.io/projects/disco.html) | Online Demo(<font color=red>coming soon</font>)
-
-#### *This is the official implementation of our SIGA paper: Disentangled Image Colorization via Global Anchors.*
 
 <div align="center">
 	<img src="asserts/teaser.png" width="95%">
