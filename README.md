@@ -2,16 +2,13 @@
 
 ### Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
 
-:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
-
-## Network Architecture
-
 Conceptual, our colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
 
 <div align="center">
 	<img src="asserts/network.png" width="95%">
 </div>
 
+:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ## Dependencies and Installation
 
