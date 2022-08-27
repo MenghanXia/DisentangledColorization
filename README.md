@@ -1,14 +1,9 @@
 ## DISCO: Disentangled Image Colorization via Global Anchors
-
-Paper(<span style="color:red;">coming soon</span>) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(<span style="color:red;">coming soon</span>)
+Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
 
 <div align="center">
 	<img src="asserts/teaser.png" width="95%">
 </div>
-
-<br>
-
-:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ### Network architecture
 Conceptual, our colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
@@ -16,6 +11,9 @@ Conceptual, our colorization model consists of two components: (i) **anchor colo
 <div align="center">
 	<img src="asserts/network.png" width="95%">
 </div>
+
+<br>
+:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ### Updates
 - **2022.08.27**: Train/Test code and pretrained models are released.
