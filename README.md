@@ -1,6 +1,8 @@
 # DISCO: Disentangled Image Colorization via Global Anchors
 
-###Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
+### Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
+
+:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ## Network Architecture
 
@@ -9,11 +11,6 @@ Conceptual, our colorization model consists of two components: (i) **anchor colo
 <div align="center">
 	<img src="asserts/network.png" width="95%">
 </div>
-
-
-<br>
-:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
-
 
 
 ## Dependencies and Installation
