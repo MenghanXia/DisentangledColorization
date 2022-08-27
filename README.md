@@ -1,4 +1,4 @@
-## Disentangled Image Colorization via Global Anchors <img src="asserts/favicon.ico" width="10%">
+## <img src="asserts/favicon.ico" width="10%"> Disentangled Image Colorization via Global Anchors
 
 Paper(<font color=red>coming soon</font>) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(<font color=red>coming soon</font>)
 
