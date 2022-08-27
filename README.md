@@ -1,4 +1,4 @@
-# DISCO: Disentangled Image Colorization via Global Anchors
+# Disentangled Image Colorization via Global Anchors
 
 ### Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
 
@@ -35,7 +35,7 @@ Conceptual, our colorization model consists of two components: (i) **anchor colo
 ## Citation
 If any part of our paper and code is helpful to your work, please generously cite with:
 ```
-@article{xia-2021-inverthalf,
+@article{xia-2022-disco,
 	author   = {Menghan Xia and Wenbo Hu and Tien-Tsin Wong and Jue Wang},
 	title    = {Disentangled Image Colorization via Global Anchors},
 	journal = {ACM Transactions on Graphics (TOG)},
