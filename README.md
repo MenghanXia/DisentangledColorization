@@ -1,4 +1,4 @@
-<img src="asserts/favicon.ico" width="10%"> <font face="STCAIYUN" size=12>Disentangled Image Colorization via Global Anchors</font>
+<img src="asserts/favicon.ico" width="10%"> <font face="STCAIYUN" size=25>Disentangled Image Colorization via Global Anchors</font>
 
 Paper(<font color=red>coming soon</font>) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(<font color=red>coming soon</font>)
 
