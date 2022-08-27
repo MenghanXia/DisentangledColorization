@@ -1,6 +1,6 @@
-## Disentangled Image Colorization via Global Anchors
+## DISCO: Disentangled Image Colorization via Global Anchors
 
-#### *This is the official implementation of our SIGA paper: Disentangled Image Colorization via Global Anchors.*
+**This is the official implementation of our colorization work**: *DISCO*
 <!-- ------------------------------------------------------------------------------ -->
 
 Paper(<font color=red>coming soon</font>) | [Project Page](menghanxia.github.io/projects/disco.html) | Online Demo(<font color=red>coming soon</font>)
