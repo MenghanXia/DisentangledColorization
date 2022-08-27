@@ -1,10 +1,8 @@
-## DISCO: Disentangled Image Colorization via Global Anchors
-<!-- ------------------------------------------------------------------------------ -->
+# DISCO: Disentangled Image Colorization via Global Anchors
 
-Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
+###Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
 
-<br>
-:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
+## Network Architecture
 
 Conceptual, our colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
 
@@ -12,12 +10,16 @@ Conceptual, our colorization model consists of two components: (i) **anchor colo
 	<img src="asserts/network.png" width="95%">
 </div>
 
-<!-- ------------------------------------------------------------------------------ -->
-### Dependencies and Installation
+
+<br>
+:blush: **This is the official implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 
-<!-- ------------------------------------------------------------------------------ -->
-### Quick Inference
+
+## Dependencies and Installation
+
+
+## Quick Inference
 
 - **Download Pre-trained Models**:
 
@@ -26,16 +28,14 @@ Conceptual, our colorization model consists of two components: (i) **anchor colo
 - **Testing on Colorization**:
 
 
-<!-- ------------------------------------------------------------------------------ -->
-### Train
+## Train
 
 - **Prepare Training Data**:
 
 - **Training on Colorization**:
 
 
-<!-- ------------------------------------------------------------------------------ -->
-### Citation
+## Citation
 If any part of our paper and code is helpful to your work, please generously cite with:
 ```
 @article{xia-2021-inverthalf,
