@@ -16,13 +16,13 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 
 ## Checkpoints
-| Name |   URL  | Training Script | Model Description |
-| :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper |
-| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
-| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
-| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
-| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 |
+| Name |   URL  | Training Script | Model Description | GPUS |
+| :----: | :----: | :----: | :----: | :----: |
+| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper | $4\times$A100 |
+| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation | $4\times$A100 |
+| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations | $4\times$A100 |
+| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 | $2\times$V100 |
+| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 | $2\times$ V100 |
 
 
 ## Quick Inference
@@ -31,7 +31,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 - **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Images**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of the fixed resolution. Optional arguments includes:
+- **Testing on Images**: As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
 	- `--no_resize`: to colorize the image at the original input resolution.
     - `--diverse`: to generate diverse (three) colorization results.
 	- `random_hint`: to use randomly scattered anchor locations.
@@ -43,13 +43,13 @@ or
 ```
 sh ./scripts/inferece.sh
 ```
-The result will be saved into the created folder `[save name]` in current directory.
+The result will be saved into the created folder `save name` at current directory.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
 
 
 ## Training
 
-- **Prepare Training Data**: Official [ImageNet]() and [COCO-Stuff]() dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` indicates the dataset location and  `--dataset` indicates the dataset name (e.g., 'imagenet' and 'coco') that is required by dataloader construction.
+- **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` indicates the dataset location and  `--dataset` indicates the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
 
 - **Training the Model**:
 ```
@@ -58,7 +58,7 @@ sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 
 
 ## Acknowledgement
-We borrow some codes from [SpixelFCN](https://github.com/fuy34/superpixel_fcn), [iDeepColor](https://github.com/richzhang/colorization-pytorch), and [DETR](https://github.com/facebookresearch/detr). Thanks for their awesome works.
+Part of our codes are taken from from [SpixelFCN](https://github.com/fuy34/superpixel_fcn), [iDeepColor](https://github.com/richzhang/colorization-pytorch), and [DETR](https://github.com/facebookresearch/detr). Thanks for their awesome works.
 
 
 ## Citation
