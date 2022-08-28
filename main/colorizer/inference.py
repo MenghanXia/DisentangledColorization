@@ -162,4 +162,5 @@ if __name__ == '__main__':
     parser.add_argument('--diverse', action='store_true', default=False, help='use pixel-level enhancement or not')
 
     args = parser.parse_args()
+    args.dense_pos = True
     test_model(args.data, args.model, args.psize, args.checkpt, args.name, args)

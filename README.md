@@ -16,7 +16,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 
 ## Checkpoints
-| Name |   URL  | Training Script | Model Description | Size |
+| Name |   URL  | Training Script | Model Description |
 | :----: | :----: | :----: | :----: |
 | DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | default colorization model used in our paper |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
@@ -27,13 +27,15 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 ## Quick Inference
 
-- **Download Pre-trained Models**:
+- **Download Pre-trained Models**: download a pretrained colorization model from the table above.
 
-- **Prepare Testing Data**:
+- **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Colorization**:
-
-*Note that, the colorization result may also vary a bit depending on the random seed because the clustering based anchor location involves randomness.*
+- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of that fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution. Also, add the argument `--diverse` will generate three different colorization results.
+```
+python3 inference.py --model AnchorColorProb --data [input folder] --checkpt [checkpoint path] --name classic --n_clusters 8
+```
+*Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.*
 
 
 ## Training
