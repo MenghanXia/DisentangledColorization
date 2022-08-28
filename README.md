@@ -61,7 +61,8 @@ conda env create -f environment.yml
 	- `--no_resize`: colorize the image at the original input resolution.
     - `--diverse`: generate diverse (three) colorization results.
 	- `--random_hint`: use randomly scattered anchor locations.
-You can run ```sh ./scripts/inferece.sh``` to check the results of the samples in `./data`. Or You can specifiy your own directories as:
+
+```sh ./scripts/inferece.sh``` is going to colorize the samples in `./data`. Also, you can specifiy your own directories as:
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
 	--name [save name] --n_clusters 8
