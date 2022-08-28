@@ -31,14 +31,17 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 - **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of the fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution, and add `--diverse` to generate three different colorization results.
+- **Testing on Images**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of the fixed resolution. Optional arguments includes:
+	- `--no_resize`: to colorize the image at the original input resolution.
+    - `--diverse`: to generate diverse (three) colorization results.
+	- `random_hint`: to use randomly scattered anchor locations.
 ```
-python3 ./main/colorizer/inference.py --model AnchorColorProb --checkpt [checkpoint path] --data [input dir] \
---name [save name] --n_clusters 8		#optional argument: --no_resize	--diverse	
+python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
+--name [save name] --n_clusters 8		#optional arguments: --no_resize	--diverse	
 ```
 or
 ```
-sh scripts/inferece.sh
+sh ./scripts/inferece.sh
 ```
 The result will be saved into the created folder `[save name]` in current directory.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
@@ -46,9 +49,9 @@ Note that, the colorization result may also vary a bit depending on the random s
 
 ## Training
 
-- **Prepare Training Data**: Official [ImageNet]() and [COCO-Stuff]() dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` denotes the directory of the dataset and  `--dataset` denotes the dataset name (e.g., 'imagenet' and 'coco') that will be used to construct appropriate dataloader.
+- **Prepare Training Data**: Official [ImageNet]() and [COCO-Stuff]() dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` indicates the dataset location and  `--dataset` indicates the dataset name (e.g., 'imagenet' and 'coco') that is required by dataloader construction.
 
-- **Training on Colorization**:
+- **Training the Model**:
 ```
 sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 ```

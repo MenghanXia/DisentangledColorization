@@ -1,1 +1,1 @@
-python3 ../main/colorizer/inference.py --model AnchorColorProb  --data "./data" --checkpt "./checkpoints/disco_last.pth.tar" --name result --n_clusters 8
+python3 ../main/colorizer/inference.py  --data "./data" --checkpt "./checkpoints/disco_last.pth.tar" --name result --n_clusters 8

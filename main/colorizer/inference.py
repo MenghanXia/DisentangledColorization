@@ -163,4 +163,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     args.dense_pos = True
+    args.model = "AnchorColorProb"
     test_model(args.data, args.model, args.psize, args.checkpt, args.name, args)
