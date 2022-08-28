@@ -1,0 +1,17 @@
+addict
+future
+numpy
+opencv-python
+pandas
+Pillow
+pyyaml
+requests
+scikit-image
+scikit-learn
+scipy
+torch>=1.8.0
+torchvision
+tensorboardx>=2.4
+tqdm
+yapf
+lpips

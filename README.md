@@ -14,8 +14,8 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 ## Dependencies and Installation
 
-- Pytorch >= 1.7.1
-- CUDA >= 10.1
+- Pytorch >= 1.8.0
+- CUDA >= 10.2
 - Other required packages in `requirements.txt`
 ```
 # git clone this repository
@@ -27,17 +27,17 @@ conda create -n DISCO python=3.8 -y
 source activate DISCO
 
 # install python dependencies
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Checkpoints
-| Name |   URL  | Script | Model Description |
-| :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper |
-| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
-| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
-| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
-| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 |
+| Name |   URL  | Script | Model Description | FID (COCO) |
+| :----: | :----: | :----: | :----: | :----: |
+| DISCO 	 | [model](xxx) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper | TBD |
+| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation | TBD |
+| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations | TBD |
+| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 | NA |
+| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 | NA |
 
 
 ## Quick Inference
@@ -67,6 +67,9 @@ Note that, the colorization result may also vary a bit depending on the random s
 sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 ```
 
+## Evaluation
+
+*TBD*
 
 ## Acknowledgement
 Part of our codes are taken from from [SpixelFCN](https://github.com/fuy34/superpixel_fcn), [iDeepColor](https://github.com/richzhang/colorization-pytorch), and [DETR](https://github.com/facebookresearch/detr). Thanks for their awesome works.
