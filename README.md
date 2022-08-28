@@ -16,13 +16,14 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 
 ## Checkpoints
-| Name |   URL  | Training Script | Description |
+| Name |   URL  | Training Script | Model Description | Size |
 | :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [script](xxx) | Default colorization model used in our paper |
-| DISCO-c0.2 | [model](xxx) | [script](xxx) | Colorization model with relatively mild color saturation |
-| DISCO-rand | [model](xxx) | [script](xxx) | Colorization model trained with random anchor locations |
-| SPixelNet-s16 | [model](xxx) | [script](xxx) | Superpixel segmentation model with primitive size of 16 |
-| SPixelNet-s8 | [model](xxx) | [script](xxx) | Superpixel segmentation model with primitive size of 8 |
+| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | default colorization model used in our paper |
+| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
+| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
+| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
+| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 |
+
 
 ## Quick Inference
 
@@ -31,6 +32,8 @@ Conceptually, our disentangled colorization model consists of two components: (i
 - **Prepare Testing Data**:
 
 - **Testing on Colorization**:
+
+*Note that, the colorization result may also vary a bit depending on the random seed because the clustering based anchor location involves randomness.*
 
 
 ## Training
