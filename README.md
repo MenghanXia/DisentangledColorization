@@ -14,7 +14,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 ## Dependencies and Installation
 
-- Pytorch >= 1.8.0
+- PyTorch >= 1.8.0
 - CUDA >= 10.2
 - Other required packages in `requirements.txt`
 ```
