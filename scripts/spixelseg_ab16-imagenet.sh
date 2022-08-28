@@ -1,0 +1,1 @@
+python3 -m torch.distributed.launch --nproc_per_node=2 ./main/spixelseg/spixel_seg_ddp.py  --data_dir "/apdcephfs/share_1290939/0_public_datasets/imageNet_2012/" --save_dir "/apdcephfs/share_1290939/richardxia/Saved/" --ckpt_dir "/apdcephfs/share_1290939/richardxia/Saved/" --dataset imagenet --batch_size 128 --exp_name SpixelSeg_ab16-imagenet --psize 16 --epochs 20 --feat ab
