@@ -19,26 +19,25 @@ Conceptually, our disentangled colorization model consists of two components: (i
 - Other required packages in `requirements.txt`
 ```
 # git clone this repository
-git clone https://github.com/sczhou/CodeFormer
-cd CodeFormer
+git clone https://github.com/MenghanXia/DisentangledColorization
+cd DisentangledColorization
 
 # create new anaconda env
-conda create -n codeformer python=3.8 -y
-source activate codeformer
+conda create -n DISCO python=3.8 -y
+source activate DISCO
 
 # install python dependencies
 pip3 install -r requirements.txt
-python basicsr/setup.py develop
 ```
 
 ## Checkpoints
-| Name |   URL  | Training Script | Model Description |
+| Name |   URL  | Script | Model Description |
 | :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper |
-| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
-| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
-| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
-| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 |
+| DISCO 	 | [model](xxx) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper |
+| DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
+| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
+| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
+| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 |
 
 
 ## Quick Inference
@@ -53,7 +52,7 @@ python basicsr/setup.py develop
 	- `random_hint`: use randomly scattered anchor locations.
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
---name [save name] --n_clusters 8
+	   --name [save name] --n_clusters 8
 ```
 or ```sh ./scripts/inferece.sh```. The result will be saved into the created folder `save name` at current directory.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
