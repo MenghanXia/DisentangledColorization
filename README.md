@@ -53,9 +53,9 @@ conda env create -f environment.yml
 
 ## Quick Inference
 
-- **Download Pre-trained Models**: download a pretrained colorization model from the table above and put it a folder, e.g., `./checkpoints`.
+- **Download Pre-trained Models**: download a pretrained colorization model from the table above and put it into a folder, like `./checkpoints`.
 
-- **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
+- **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
 - **Test on Images**: As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
 	- `--no_resize`: colorize the image at the original input resolution.
@@ -65,11 +65,12 @@ conda env create -f environment.yml
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
 	--name [save name] --n_clusters 8
 ```
-Or ```sh ./scripts/inferece.sh```. You are recommended to use the absolute paths as arguments, otherwise note that running `inference.py` will redirect the *current dir* to `./main/colorizer`. Also, changing the random seed `--seed`
+Or ```sh ./scripts/inferece.sh```. You are recommended to use the absolute paths as arguments, otherwise note that running `inference.py` will redirect the *current dir* to `./main/colorizer`. Besides, changing the random seed `--seed`
 may result in different colorization result because the clustering-based anchor location involves randomness.
 
 
 ## Training
+- **Download Pre-trained Models**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
 
 - **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. You only need to specify two training arguments: `--data_dir`: the dataset location and  `--dataset`: the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
 

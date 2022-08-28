@@ -55,8 +55,8 @@ def train_model(args, gpu_num, gpu_no, is_ddp):
     hcolor_model = eval('model.'+args.model)(inChannel=1, outChannel=313, sp_size=args.psize, use_dense_pos=args.dense_pos,\
                                              n_clusters=args.n_clusters, random_hint=args.random_hint, spix_pos=args.spix_pos, \
                                              learning_pos=args.learning_pos, hint2regress=args.hint2regress, enhanced=args.enhanced, rank=gpu_no)
-    foldername = 'SpixelSeg_ab8-imagenet' if args.psize == 8 else 'SpixelSeg_ab16-imagenet'
-    pretrain_weight = os.path.join(args.ckpt_dir, foldername, 'checkpts', 'model_last.pth.tar')
+    ckpt_name = 'spix8ab-imagenet_last.pth.tar' if args.psize == 8 else 'spix16ab-imagenet_last.pth.tar'
+    pretrain_weight = os.path.join(args.ckpt_dir, ckpt_name)
     hcolor_model.load_and_froze_weight(pretrain_weight)
     if gpu_no == 0:
         print('@model params:%.3f (M)'%(basic.getParamsAmount(hcolor_model)/1e6))
