@@ -16,19 +16,29 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 - PyTorch >= 1.8.0
 - CUDA >= 10.2
-- Other required packages in `requirements.txt`
+- Other required packages in [requirements.txt](./requirements.txt)
 ```
 # git clone this repository
 git clone https://github.com/MenghanXia/DisentangledColorization
 cd DisentangledColorization
-
-# create new anaconda env
-conda create -n DISCO python=3.8 -y
+```
+```
+# create a new anaconda env
+conda create -n DISCO python=3.8
 source activate DISCO
 
-# install python dependencies
-pip install -r requirements.txt
+# install pytortch
+conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
+
+# install other packages
+pip install requirements.txt
 ```
+Or
+```
+# create a anaconda env with required packages installed
+conda env create -f environment.yml
+```
+
 
 ## Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
@@ -46,15 +56,15 @@ pip install -r requirements.txt
 
 - **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Images**: As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
+- **Test on Images**: As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
 	- `--no_resize`: colorize the image at the original input resolution.
     - `--diverse`: generate diverse (three) colorization results.
-	- `random_hint`: use randomly scattered anchor locations.
+	- `--random_hint`: use randomly scattered anchor locations.
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
 	--name [save name] --n_clusters 8
 ```
-or ```sh ./scripts/inferece.sh```. The result will be saved into the created folder `save name` at current directory.
+Or ```sh ./scripts/inferece.sh```. You are recommended to use the absolute paths as arguments because the *current dir* is redirected to `./main/colorizer` when running the `inference.py`.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
 
 
@@ -62,7 +72,7 @@ Note that, the colorization result may also vary a bit depending on the random s
 
 - **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` indicates the dataset location and  `--dataset` indicates the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
 
-- **Training the Model**:
+- **Train the Model**: Aganin, you are recommended to use the absolute paths as arguments.
 ```
 sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 ```
