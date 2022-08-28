@@ -18,7 +18,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 ## Checkpoints
 | Name |   URL  | Training Script | Model Description |
 | :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | default colorization model used in our paper |
+| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* used in our paper |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
 | SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
