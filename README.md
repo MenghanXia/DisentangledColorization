@@ -52,7 +52,7 @@ pip install -r requirements.txt
 	- `random_hint`: use randomly scattered anchor locations.
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
-	   --name [save name] --n_clusters 8
+	--name [save name] --n_clusters 8
 ```
 or ```sh ./scripts/inferece.sh```. The result will be saved into the created folder `save name` at current directory.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
