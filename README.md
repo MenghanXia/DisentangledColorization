@@ -22,7 +22,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 git clone https://github.com/MenghanXia/DisentangledColorization
 cd DisentangledColorization
 ```
-- **Environment configuration: option 1**
+#### Environment configuration: option 1
 ```
 # create a new anaconda env
 conda create -n DISCO python=3.8
@@ -34,7 +34,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10
 # install other packages
 pip install requirements.txt
 ```
-- **Environment configuration: option 2**
+#### Environment configuration: option 2
 ```
 # create a anaconda env with required packages installed
 conda env create -f environment.yml
@@ -71,7 +71,7 @@ may result in different colorization result because the clustering-based anchor 
 
 ## Training
 
-- **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` indicates the dataset location and  `--dataset` indicates the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
+- **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. You only need to specify two training arguments: `--data_dir`: the dataset location and  `--dataset`: the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
 
 - **Train the Model**: Aganin, you are recommended to use the absolute paths as arguments to avoid accident.
 ```
