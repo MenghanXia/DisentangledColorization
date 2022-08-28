@@ -31,10 +31,10 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 - **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of that fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution, and use `--diverse` to generate three different colorization results.
+- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of that fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution, and add `--diverse` to generate three different colorization results.
 ```
 python3 inference.py --model AnchorColorProb --data [input folder] --checkpt [checkpoint path] \
---name [experiment name] --n_clusters 8
+--name [experiment name] --n_clusters 8		# --no_resize	--diverse	
 ```
 The result will be saved into the created folder `[experiment name]` located in the parent directory of `[checkpoint path]`.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
