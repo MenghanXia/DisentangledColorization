@@ -18,7 +18,7 @@ Conceptually, our disentangled colorization model consists of two components: (i
 ## Checkpoints
 | Name |   URL  | Training Script | Model Description |
 | :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* used in our paper |
+| DISCO 	 | [model](xxx) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | **default colorization model** used in our paper |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with relatively mild color saturation |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [script.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model trained with random anchor locations |
 | SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [script.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 |
@@ -31,20 +31,27 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 - **Prepare Testing Data**: You can put the testing images in a folder, e.g., `./data`
 
-- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of that fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution, and add `--diverse` to generate three different colorization results.
+- **Testing on Colorization**: As default, the input image will be resized into 256x256 and generate a colorized RGB image of the fixed resolution. Optionally, you can add `--no_resize` to colorize the image at the original resolution, and add `--diverse` to generate three different colorization results.
 ```
-python3 inference.py --model AnchorColorProb --checkpt [checkpoint path] --data [input dir] \
---save [output dir] --n_clusters 8		# --no_resize	--diverse	
+python3 ./main/colorizer/inference.py --model AnchorColorProb --checkpt [checkpoint path] --data [input dir] \
+--name [save name] --n_clusters 8		#optional argument: --no_resize	--diverse	
 ```
-The result will be saved into the specified `[output dir]` located in the parent directory of `[checkpoint path]`.
+or
+```
+sh scripts/inferece.sh
+```
+The result will be saved into the created folder `[save name]` in current directory.
 Note that, the colorization result may also vary a bit depending on the random seed `--seed` because the clustering based anchor location involves randomness.
 
 
 ## Training
 
-- **Prepare Training Data**:
+- **Prepare Training Data**: Official [ImageNet]() and [COCO-Stuff]() dataset and any other color image dataset are supported. Only need to specify two training arguments: `--data_dir` denotes the directory of the dataset and  `--dataset` denotes the dataset name (e.g., 'imagenet' and 'coco') that will be used to construct appropriate dataloader.
 
 - **Training on Colorization**:
+```
+sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
+```
 
 
 ## Acknowledgement

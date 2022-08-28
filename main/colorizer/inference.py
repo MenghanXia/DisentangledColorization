@@ -58,7 +58,7 @@ def test_model(data_dir, model_name, sp_size, checkpt_path, name, seq_model_args
     np.random.seed(seq_model_args.seed)
     torch.manual_seed(seq_model_args.seed)
     torch.cuda.manual_seed(seq_model_args.seed)
-    root_dir = os.path.abspath(os.path.join(checkpt_path, '..', '..'))
+    root_dir = os.path.abspath(os.path.join('./', '..', '..'))
     save_dir = os.path.join(root_dir, name+'-anchor%d'%args.n_clusters)
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
@@ -142,7 +142,7 @@ def batch_depadding(lab_img, H, W, args):
 if __name__ == '__main__':
     print("FLAG: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
     parser = argparse.ArgumentParser()
-    parser.add_argument('--name', type=str, default='result', help='save dir name')
+    parser.add_argument('--name', type=str, default='classic', help='save dir name')
     parser.add_argument('--seed', default='130', type=int, help='random seed')
     parser.add_argument('--psize', default='16', type=int, help='super-pixel size')
     parser.add_argument('--data', type=str, default='../../../0DataZoo/Dataset_C/VOC2012/Val/target', help='path of images')
