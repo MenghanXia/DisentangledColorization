@@ -83,7 +83,14 @@ sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 
 ## Evaluation
 
-*TBD*
+We provide the python implementation of the colorization evaluation metrics [HERE](), and the corresponding running scripts are attached.
+```
+# fidelity metrics: PSNR, SSIM, LPIPS
+sh run_fidelity.sh
+
+# perceptual quality: FID, IS, colorfulness
+sh run_perception.sh
+```
 
 ## Acknowledgement
 Part of our codes are taken from from [SpixelFCN](https://github.com/fuy34/superpixel_fcn), [iDeepColor](https://github.com/richzhang/colorization-pytorch), and [DETR](https://github.com/facebookresearch/detr). Thanks for their awesome works.
