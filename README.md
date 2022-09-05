@@ -46,7 +46,7 @@ conda env create -f environment.yml
 | :----: | :----: | :----: | :----: | :----: |
 | DISCO 	 | [model](xxx) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* | 10.59 |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
-| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor pos | 10.25 |
+| DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 | SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 | NA |
 | SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 | NA |
 
