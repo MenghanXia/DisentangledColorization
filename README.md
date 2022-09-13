@@ -44,7 +44,7 @@ conda env create -f environment.yml
 ## Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
 | :----: | :----: | :----: | :----: | :----: |
-| DISCO 	 | [model](xxx) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* | 10.59 |
+| DISCO 	 | model | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* (coming soon) | 10.59 |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 | SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 | NA |
