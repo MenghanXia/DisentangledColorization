@@ -1,6 +1,6 @@
 # Disentangled Image Colorization via Global Anchors
 
-### Paper(coming soon) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
+### [Paper](https://menghanxia.github.io/papers/2022_disco_main.pdf) | [Project Page](https://menghanxia.github.io/projects/disco.html) | Online Demo(coming soon)
 
 Conceptually, our disentangled colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
 
