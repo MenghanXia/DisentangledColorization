@@ -99,10 +99,13 @@ Part of our codes are taken from from [SpixelFCN](https://github.com/fuy34/super
 ## Citation
 If any part of our paper and code is helpful to your work, please generously cite with:
 ```
-@article{xia-2022-disco,
+@article{XiaHWW22,
 	author   = {Menghan Xia and Wenbo Hu and Tien-Tsin Wong and Jue Wang},
 	title    = {Disentangled Image Colorization via Global Anchors},
-	journal = {ACM Transactions on Graphics (TOG)},
+	journal  = {ACM Transactions on Graphics (TOG)},
+	volume   = {41},
+	number   = {6},
+	pages    = {204:1--204:13},
 	year = {2022}
 }
 ```
