@@ -58,6 +58,7 @@ conda env create -f environment.yml
 - **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
 - **Test on Images**: As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
+	- `--n_clusters`: specify the number of color anchors (default=8).
 	- `--no_resize`: colorize the image at the original input resolution.
     - `--diverse`: generate diverse (three) colorization results.
 	- `--random_hint`: use randomly scattered anchor locations.
