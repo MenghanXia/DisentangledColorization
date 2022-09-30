@@ -59,9 +59,8 @@ conda env create -f environment.yml
 ```
 sh ./scripts/inferece.sh
 ```
-Then, the colorized images will be saved in `./test-anchor8`. As default, the input image will be resized into 256x256 and colorized at this fixed resolution.
-
-Optional arguments includes:
+Then, the colorized images will be saved in `./test-anchor8`. As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
+-
 	- `--no_resize`: colorize the image at the original input resolution.
     - `--diverse`: generate diverse (three) colorization results.
 	- `--n_clusters`: specify the number of color anchors (default=8).
