@@ -55,21 +55,15 @@ conda env create -f environment.yml
 
 - **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
-- **Test on Images**: Run the inference script:
-```
-sh ./scripts/inferece.sh
-```
-Then, the colorized images will be saved in `./test-anchor8`. As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
--
+- **Test on Images**: Run the inference script ```sh ./scripts/inferece.sh``` and the colorized images will be saved in `./test-anchor8`. As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
 	- `--no_resize`: colorize the image at the original input resolution.
     - `--diverse`: generate diverse (three) colorization results.
 	- `--n_clusters`: specify the number of color anchors (default=8).
 	- `--random_hint`: use randomly scattered anchor locations.
-
 Also, you can specifiy your own directories by runing the command below:
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
-	--name [save name] --n_clusters 8
+	--name [save name]
 ```
 You are recommended to use the absolute paths as arguments, otherwise please note that running `inference.py` will redirect the *current dir* to `./main/colorizer`. Note that, changing the random seed `--seed`
 may result in different colorization result because the clustering-based anchor location involves randomness.
@@ -84,7 +78,7 @@ may result in different colorization result because the clustering-based anchor 
 	- `ckpt_dir`: the directory of any pre-trained models required by the training.
 	- `save_dir`: the directory to save the training meta data and checkpoints.
 
-- **Train the Model**: Aganin, you are recommended to use the absolute paths as arguments to avoid accident.
+- **Train the Model**: Again, you are recommended to use the absolute paths as arguments to avoid accident.
 ```
 sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 ```
