@@ -142,7 +142,7 @@ def batch_depadding(lab_img, H, W, args):
 if __name__ == '__main__':
     print("FLAG: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f'))
     parser = argparse.ArgumentParser()
-    parser.add_argument('--name', type=str, default='classic', help='save dir name')
+    parser.add_argument('--name', type=str, default='test', help='save dir name')
     parser.add_argument('--seed', default='130', type=int, help='random seed')
     parser.add_argument('--psize', default='16', type=int, help='super-pixel size')
     parser.add_argument('--data', type=str, default='../../../0DataZoo/Dataset_C/VOC2012/Val/target', help='path of images')
