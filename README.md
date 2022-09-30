@@ -47,13 +47,11 @@ conda env create -f environment.yml
 | DISCO 	 | model | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* (coming soon) | TBD |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
-| SPixelNet-s16 | [model](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab16-imagenet.sh) | superpixel segmentation model with primitive size of 16 | NA |
-| SPixelNet-s8 | [model](https://drive.google.com/file/d/1pZK01Si_ufyAbLiLkugA_KY5z6NFnnET/view?usp=sharing) | [train.sh](./scripts/spixelseg_ab8-imagenet.sh) | superpixel segmentation model with primitive size of 8 | NA |
 
 
 ## Quick Inference
 
-- **Download Pre-trained Models**: download a pretrained colorization model from the table above and put it into a folder, like `./checkpoints`.
+- **Download Pre-trained Models**: download a pretrained colorization model from the table above and put it into the folder `./checkpoints`.
 
 - **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
@@ -73,9 +71,13 @@ may result in different colorization result because the clustering-based anchor 
 
 
 ## Training
-- **Download Pre-trained Models**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
+- **Download Pre-trained SPixelNet**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
 
-- **Prepare Training Data**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. You only need to specify two training arguments: `--data_dir`: the dataset location and  `--dataset`: the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
+- **Prepare Data and Configuration**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. You need to specify the training arguments below:
+	- `--data_dir`: the dataset location
+	- `--dataset`: the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
+	- `ckpt_dir`: the directory of any pre-trained models required by the training.
+	- `save_dir`: the directory to save the training meta data and checkpoints.
 
 - **Train the Model**: Aganin, you are recommended to use the absolute paths as arguments to avoid accident.
 ```
