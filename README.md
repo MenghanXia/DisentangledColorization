@@ -60,6 +60,7 @@ conda env create -f environment.yml
     - `--diverse`: generate diverse (three) colorization results.
 	- `--n_clusters`: specify the number of color anchors (default=8).
 	- `--random_hint`: use randomly scattered anchor locations.
+
 Also, you can specifiy your own directories by runing the command below:
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
