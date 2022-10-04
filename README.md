@@ -44,14 +44,14 @@ conda env create -f environment.yml
 ## Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
 | :----: | :----: | :----: | :----: | :----: |
-| DISCO 	 | model | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | *default colorization model* (coming soon) | TBD |
+| DISCO 	 | [model](https://drive.google.com/file/d/1J4vB6kG4xBLUUKpXr5IhnSSa4maXgRvQ/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | recommended colorization model (*kept updating*) | TBD |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 
 
 ## Quick Inference
 
-- **Download Pre-trained Models**: download a pretrained colorization model from the table above and put it into the folder `./checkpoints`.
+- **Download Pre-trained Models**: download a pretrained colorization model by ```sh ./checkpoints/disco_download.sh``` or from the tabulated links, and put it into the folder `./checkpoints`.
 
 - **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
