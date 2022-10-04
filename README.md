@@ -61,7 +61,7 @@ conda env create -f environment.yml
 	- `--n_clusters`: specify the number of color anchors (default=8).
 	- `--random_hint`: use randomly scattered anchor locations.
 
-Also, you can specifiy your own directories by runing the command below:
+Also, you can specify your own directories by runing the command below:
 ```
 python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input dir] \
 	--name [save name]
