@@ -86,7 +86,7 @@ sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
 
 ## Evaluation
 
-We provide the python implementation of the colorization evaluation metrics [HERE](), and the corresponding running scripts are attached.
+We provide the python implementation of the colorization evaluation metrics [HERE](https://drive.google.com/file/d/18SXfoz4y47ufggA8qt92ref5tZ7KJzqe/view?usp=sharing), and the corresponding running scripts are attached.
 ```
 # fidelity metrics: PSNR, SSIM, LPIPS
 sh run_fidelity.sh
