@@ -10,7 +10,6 @@ Conceptually, our disentangled colorization model consists of two components: (i
 	<img src="asserts/network.png" width="95%">
 </div>
 
-<br>
 
 
 ## :briefcase: Dependencies and Installation
@@ -41,7 +40,6 @@ pip install requirements.txt
 conda env create -f environment.yml
 ```
 
-<br>
 
 ## :gift: Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
@@ -50,7 +48,6 @@ conda env create -f environment.yml
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 
-<br>
 
 ## :zap: Quick Inference
 
@@ -72,7 +69,6 @@ python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input d
 You are recommended to use the absolute paths as arguments, otherwise please note that running `inference.py` will redirect the *current dir* to `./main/colorizer`. Note that, changing the random seed `--seed`
 may result in different colorization result because the clustering-based anchor location involves randomness.
 
-<br>
 
 ## :computer: Training
 - **Download Pre-trained SPixelNet**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
@@ -97,7 +93,6 @@ may result in different colorization result because the clustering-based anchor 
 sh scripts/train_imagenet_ddp.sh
 ```
 
-<br>
 
 ## :triangular_ruler: Evaluation
 
