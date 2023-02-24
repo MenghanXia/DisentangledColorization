@@ -89,9 +89,9 @@ may result in different colorization result because the clustering-based anchor 
 	- `save_dir`: the directory to save the training meta data and checkpoints.
 
 - **Train the Model**: Again, you are recommended to use the absolute paths as arguments to avoid accident.
-```
-sh scripts/train_imagenet_ddp.sh
-```
+	```
+	sh scripts/train_yours_ddp.sh
+	```
 
 
 ## :triangular_ruler: Evaluation
