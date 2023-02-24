@@ -2,6 +2,8 @@
 
 ### [Paper](https://menghanxia.github.io/papers/2022_disco_main.pdf) | [Project Page](https://menghanxia.github.io/projects/disco.html) | [Online Demo](https://huggingface.co/spaces/menghanxia/disco)
 
+:blush: **This is the official PyTorch implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
+
 Conceptually, our disentangled colorization model consists of two components: (i) **anchor color representation** that predicts the global color anchors (i.e. location and probabilistic colors) as the color representation of the whole image; (ii) **anchor-guided color generation** that synthesizes the per-pixel colors deterministically by referring the specified anchor colors.
 
 <div align="center">
@@ -10,7 +12,6 @@ Conceptually, our disentangled colorization model consists of two components: (i
 
 <br>
 
-:blush: **This is the official PyTorch implementation of our colorization work** [DISCO](https://menghanxia.github.io/projects/disco.html).
 
 ## :briefcase: Dependencies and Installation
 
@@ -40,7 +41,7 @@ pip install requirements.txt
 conda env create -f environment.yml
 ```
 
-
+<br>
 ## :gift: Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
 | :----: | :----: | :----: | :----: | :----: |
@@ -48,7 +49,7 @@ conda env create -f environment.yml
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 
-
+<br>
 ## :zap: Quick Inference
 
 - **Download Pre-trained Models**: download a pretrained colorization model by ```sh ./checkpoints/disco_download.sh``` or from the tabulated links, and put it into the folder `./checkpoints`.
@@ -69,7 +70,7 @@ python ./main/colorizer/inference.py --checkpt [checkpoint path] --data [input d
 You are recommended to use the absolute paths as arguments, otherwise please note that running `inference.py` will redirect the *current dir* to `./main/colorizer`. Note that, changing the random seed `--seed`
 may result in different colorization result because the clustering-based anchor location involves randomness.
 
-
+<br>
 ## :computer: Training
 - **Download Pre-trained SPixelNet**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
 
@@ -93,7 +94,8 @@ may result in different colorization result because the clustering-based anchor 
 sh scripts/train_imagenet_ddp.sh
 ```
 
-:triangular_ruler: ## Evaluation
+<br>
+## :triangular_ruler: Evaluation
 
 We provide the python implementation of the colorization evaluation metrics [HERE](https://drive.google.com/file/d/18SXfoz4y47ufggA8qt92ref5tZ7KJzqe/view?usp=sharing), and the corresponding running scripts are attached.
 ```

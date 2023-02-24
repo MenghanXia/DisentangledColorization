@@ -1,0 +1,1 @@
+python3 ./main/colorizer/train_colorizer.py --model AnchorColorProb --dataset disco --batch_size 6 --data_dir /your_path/yours --save_dir /your_path/Saved --ckpt_dir /your_path/checkpoints --exp_name AnchorColorProb_enhanced-h8-disco --dense_pos --enhanced
