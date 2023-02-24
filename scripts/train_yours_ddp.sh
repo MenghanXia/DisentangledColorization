@@ -1,0 +1,1 @@
+python3 -m torch.distributed.launch --nproc_per_node=4 ./main/colorizer/train_colorizer_ddp.py --model AnchorColorProb --dataset disco --batch_size 24 --data_dir /your_path/yours --save_dir /your_path/Saved --ckpt_dir /your_path/checkpoints --exp_name AnchorColorProb_enhanced-h8-disco --dense_pos --enhanced

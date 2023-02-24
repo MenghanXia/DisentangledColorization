@@ -69,8 +69,9 @@ def build_dataloader(dataset_info, mode, logger, gpu_num=1, rank=0, is_ddp=False
         return sub_list
 
     file_list = []
-    if dataset_info['dataset'] == 'voc':
-        data_dir = os.path.join(dataset_info['data_dir'], 'target')
+    if dataset_info['dataset'] == 'disco':
+        #data_dir = os.path.join(dataset_info['data_dir'], 'target')
+        data_dir = dataset_info['data_dir']
         assert os.path.exists(data_dir), "@dir:'%s' NOT exist ..."%data_dir
         file_list = get_filelist(data_dir)
         file_list.sort()

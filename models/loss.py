@@ -138,7 +138,7 @@ def huber_loss(y_input, y_target, delta=0.01):
 class VGG19Loss(nn.Module):
     def __init__(self, feat_type='liu', gpu_no=0, is_ddp=False, requires_grad=False):
         super(VGG19Loss, self).__init__()
-        os.environ['TORCH_HOME'] = '/apdcephfs/share_1290939/richardxia/Saved/Checkpoints/VGG19'
+        #os.environ['TORCH_HOME'] = '/apdcephfs/share_1290939/richardxia/Saved/Checkpoints/VGG19'
         ## data requirement: (N,C,H,W) in RGB format, [0,1] range, and resolution >= 224x224
         self.mean = [0.485, 0.456, 0.406]
         self.std = [0.229, 0.224, 0.225]

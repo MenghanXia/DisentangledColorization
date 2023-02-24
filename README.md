@@ -49,14 +49,14 @@ conda env create -f environment.yml
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 
 
-## Quick Inference
+:zap: ## Quick Inference
 
 - **Download Pre-trained Models**: download a pretrained colorization model by ```sh ./checkpoints/disco_download.sh``` or from the tabulated links, and put it into the folder `./checkpoints`.
 
 - **Prepare Testing Data**: You can put the testing images in a folder, like `./data`
 
 - **Test on Images**: Run the inference script ```sh ./scripts/inferece.sh``` and the colorized images will be saved in `./test-anchor8`. As default, the input image will be resized into 256x256 and colorized at this fixed resolution. Optional arguments includes:
-	- `--no_resize`: colorize the image at the original input resolution.
+	- `--no_resize`: colorize the image at the original input resolution (Not recommended because of unstable performance).
     - `--diverse`: generate diverse (three) colorization results.
 	- `--n_clusters`: specify the number of color anchors (default=8).
 	- `--random_hint`: use randomly scattered anchor locations.
@@ -70,21 +70,30 @@ You are recommended to use the absolute paths as arguments, otherwise please not
 may result in different colorization result because the clustering-based anchor location involves randomness.
 
 
-## Training
+:computer: ## Training
 - **Download Pre-trained SPixelNet**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
 
-- **Prepare Data and Configuration**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset and any other color image dataset are supported. You need to specify the training arguments below:
-	- `--data_dir`: the dataset location
-	- `--dataset`: the dataset name (e.g., "imagenet" and "coco") that is required by dataloader construction.
-	- `ckpt_dir`: the directory of any pre-trained models required by the training.
+- **Prepare Data and Configuration**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset or your own dataset (named "disco") are supported. You need to specify the training arguments below:
+	- `--dataset`: the dataset name ("imagenet", "coco", or "disco") that is required for dataloader construction.
+	- `--data_dir`: the dataset location. If it is not official ImageNet or COCO, please organize the dataset folder as below so as to use our code directly:
+	```shell
+	├─dataset
+	|   ├─train
+	|   |   └xxx.png
+	|   |   └xxx.png
+	|   ├─val
+	|   |   └xxx.png
+	|   |   └xxx.png
+	```
+	- `ckpt_dir`: the directory of any pre-trained models required by the training, e.g. the pre-trained SPixelNet.
 	- `save_dir`: the directory to save the training meta data and checkpoints.
 
 - **Train the Model**: Again, you are recommended to use the absolute paths as arguments to avoid accident.
 ```
-sh scripts/anchorcolorprob_hint2class-enhanced-h8.sh
+sh scripts/train_imagenet_ddp.sh
 ```
 
-## Evaluation
+:triangular_ruler: ## Evaluation
 
 We provide the python implementation of the colorization evaluation metrics [HERE](https://drive.google.com/file/d/18SXfoz4y47ufggA8qt92ref5tZ7KJzqe/view?usp=sharing), and the corresponding running scripts are attached.
 ```
