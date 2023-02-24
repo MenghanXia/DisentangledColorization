@@ -42,6 +42,7 @@ conda env create -f environment.yml
 ```
 
 <br>
+
 ## :gift: Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
 | :----: | :----: | :----: | :----: | :----: |
@@ -50,6 +51,7 @@ conda env create -f environment.yml
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
 
 <br>
+
 ## :zap: Quick Inference
 
 - **Download Pre-trained Models**: download a pretrained colorization model by ```sh ./checkpoints/disco_download.sh``` or from the tabulated links, and put it into the folder `./checkpoints`.
@@ -71,6 +73,7 @@ You are recommended to use the absolute paths as arguments, otherwise please not
 may result in different colorization result because the clustering-based anchor location involves randomness.
 
 <br>
+
 ## :computer: Training
 - **Download Pre-trained SPixelNet**: download the pretrained [SPixelNet-s16](https://drive.google.com/file/d/1sLIqur7Hxan8PhW0n8kd7vzNEuIXAEdI/view?usp=sharing) and put it into a folder, like `./checkpoints`.
 
@@ -95,6 +98,7 @@ sh scripts/train_imagenet_ddp.sh
 ```
 
 <br>
+
 ## :triangular_ruler: Evaluation
 
 We provide the python implementation of the colorization evaluation metrics [HERE](https://drive.google.com/file/d/18SXfoz4y47ufggA8qt92ref5tZ7KJzqe/view?usp=sharing), and the corresponding running scripts are attached.
