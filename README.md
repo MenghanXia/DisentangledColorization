@@ -75,7 +75,7 @@ may result in different colorization result because the clustering-based anchor 
 
 - **Prepare Data and Configuration**: Official [ImageNet](https://image-net.org/download.php) and [COCO](https://cocodataset.org/#download) dataset or your own dataset (named "disco") are supported. You need to specify the training arguments below:
 	- `--dataset`: the dataset name ("imagenet", "coco", or "disco") that is required for dataloader construction.
-	- `--data_dir`: the dataset location. If it is not official ImageNet or COCO, please organize the dataset folder as below so as to use our code directly:
+	- `--data_dir`: the dataset location. If it is not official ImageNet or COCO, please organize the dataset folder as below so as to use our dataset configuration "disco" directly:
 	```shell
 	├─dataset
 	|   ├─train
