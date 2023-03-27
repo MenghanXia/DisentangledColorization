@@ -18,13 +18,13 @@ Conceptually, our disentangled colorization model consists of two components: (i
 - CUDA >= 10.2
 - Other required packages in [requirements.txt](./requirements.txt)
 
-#### 1. Clone this repository
+**1. Clone this repository**
 ```
 git clone https://github.com/MenghanXia/DisentangledColorization
 cd DisentangledColorization
 ```
 
-#### 2. Configure the environment
+**2. Configure the environment**
 <details>
   <summary><strong>Option I</strong>: step by step.</summary>
   
@@ -51,7 +51,7 @@ conda env create -f environment.yaml
 ```
 
 </details>
-<br>
+
 
 ## :gift: Checkpoints
 | Name |   URL  | Script | Model Description | FID (COCO) |
@@ -59,7 +59,7 @@ conda env create -f environment.yaml
 | DISCO 	 | [model](https://drive.google.com/file/d/1J4vB6kG4xBLUUKpXr5IhnSSa4maXgRvQ/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8.sh) | recommended colorization model (*kept updating*) | TBD |
 | DISCO-c0.2 | [model](https://drive.google.com/file/d/1jGDOfMq4mpYe6KCc0MtuiFwdEJ7_Hcc-/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-h8-c0.2.sh) | colorization model with less aggressive color saturation | 10.47 |
 | DISCO-rand | [model](https://drive.google.com/file/d/1GLLowR-0eK2U4RAHijoizEyKd5ny10OI/view?usp=sharing) | [train.sh](./scripts/anchorcolorprob_hint2class-enhanced-rand.sh) | colorization model with higher robustness to anchor sites | 10.25 |
-<br>
+
 
 ## :zap: Quick Inference
 
