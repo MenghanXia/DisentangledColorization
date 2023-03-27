@@ -26,6 +26,7 @@ cd DisentangledColorization
 #### Environment configuration
 <details>
   <summary><strong>Option 1</strong>: step by step.</summary>
+  
 ```
 # create a new anaconda env
 conda create -n DISCO python=3.8
@@ -42,6 +43,7 @@ pip install requirements.txt
 
 <details>
   <summary>Option 2: from script file.</summary>
+  
 ```
 # create a anaconda env with required packages installed
 conda env create -f environment.yaml
