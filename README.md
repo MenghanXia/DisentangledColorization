@@ -25,7 +25,7 @@ cd DisentangledColorization
 
 #### Environment configuration
 <details>
-  <summary>Option 1: step by step.</summary>
+  <summary><strong>Option 1</strong>: step by step.</summary>
 ```
 # create a new anaconda env
 conda create -n DISCO python=3.8
@@ -37,6 +37,7 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10
 # install other packages
 pip install requirements.txt
 ```
+
 </details>
 
 <details>
@@ -45,8 +46,8 @@ pip install requirements.txt
 # create a anaconda env with required packages installed
 conda env create -f environment.yaml
 ```
-</details>
 
+</details>
 
 
 ## :gift: Checkpoints
