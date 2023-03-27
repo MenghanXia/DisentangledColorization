@@ -17,13 +17,14 @@ Conceptually, our disentangled colorization model consists of two components: (i
 - PyTorch >= 1.8.0
 - CUDA >= 10.2
 - Other required packages in [requirements.txt](./requirements.txt)
+
+#### Clone this repository
 ```
-# git clone this repository
 git clone https://github.com/MenghanXia/DisentangledColorization
 cd DisentangledColorization
 ```
 
-#### Environment configuration
+#### Configure the environment
 <details>
   <summary><strong>Option 1</strong>: step by step.</summary>
   
@@ -42,7 +43,7 @@ pip install requirements.txt
 </details>
 
 <details>
-  <summary>Option 2: from script file.</summary>
+  <summary><strong>Option 2</strong>: from script file.</summary>
   
 ```
 # create a anaconda env with required packages installed
