@@ -22,7 +22,9 @@ Conceptually, our disentangled colorization model consists of two components: (i
 git clone https://github.com/MenghanXia/DisentangledColorization
 cd DisentangledColorization
 ```
-#### Environment configuration: option 1
+#### Environment configuration
+<details>
+  <summary>step by step.</summary>
 ```
 # create a new anaconda env
 conda create -n DISCO python=3.8
@@ -34,11 +36,15 @@ conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10
 # install other packages
 pip install requirements.txt
 ```
-#### Environment configuration: option 2
+</details>
+
+<details>
+  <summary>from script file.</summary>
 ```
 # create a anaconda env with required packages installed
-conda env create -f environment.yml
+conda env create -f environment.yaml
 ```
+</details>
 
 
 ## :gift: Checkpoints
