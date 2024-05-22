@@ -203,6 +203,7 @@ class VGG19Loss(nn.Module):
         return tensor
 
     def forward(self, x, y):
+        ## x denotes the groundtruth; y denoets the prediction
         norm_x, norm_y = self.normalize(x), self.normalize(y)
         ## feature extract
         if self.feat_type == 'liu' or self.feat_type == 'lei':
@@ -215,8 +216,8 @@ class VGG19Loss(nn.Module):
             y_vgg = [y_relu1, y_relu2, y_relu3, y_relu4, y_relu5]
             loss = 0    
             for i in range(len(x_vgg)):
-                loss += self.weights[i] * self.criterion(x_vgg[i], y_vgg[i].detach())
+                loss += self.weights[i] * self.criterion(x_vgg[i].detach(), y_vgg[i])
         else:
             x_vgg, y_vgg = self.featureExactor(norm_x), self.featureExactor(norm_y)
-            loss = self.criterion(x_vgg, y_vgg.detach())
+            loss = self.criterion(x_vgg.detach(), y_vgg)
         return loss
